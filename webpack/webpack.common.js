@@ -7,6 +7,7 @@ const package_json = require(path.resolve(rootDir, './package.json'));
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const appPublicPath = (package_json.app && package_json.app.publicPath) || '/';
