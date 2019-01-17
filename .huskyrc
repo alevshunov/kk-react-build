@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-commit": "npm version --no-git-tag-version prerelease && git add package*.json"
+  }
+}
