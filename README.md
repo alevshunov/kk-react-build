@@ -19,6 +19,6 @@ The goal is to extract all build related dependencies to this super ultra infini
 ## Build
     npm run build
 
-##Dev  
+## Dev  
     npm run dev
 
