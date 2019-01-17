@@ -1,4 +1,5 @@
-# kk-react-build
+# KudesniK react build
+The goal is to extract all build related dependencies to this super ultra infinity fusion steals package.
 
 ## Install
     npm i alevshunov/kk-react-build
