@@ -81,7 +81,16 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                            sourceMap: true,
+                            // localIdentName: '[name]__[local]__[hash:base64:5]'
+                            localIdentName: '[name]__[local]'
+                        }
+                    }
                 ]
             },
             {
@@ -128,8 +137,7 @@ module.exports = {
             }
         ),
         new CopyWebpackPlugin([
-            { from: 'public/img', to: 'img' },
-            { from: 'public/manifest.json', to: '.' },
+            { from: 'public/manifest.json', to: '.' }
         ]),
         new webpack.ContextReplacementPlugin(
             /moment[\/\\]locale$/,
