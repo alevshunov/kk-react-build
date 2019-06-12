@@ -137,7 +137,7 @@ module.exports = {
             }
         ),
         new CopyWebpackPlugin([
-            { from: 'public/manifest.json', to: '.' }
+            { from: 'public', to: '.' },
         ]),
         new webpack.ContextReplacementPlugin(
             /moment[\/\\]locale$/,
