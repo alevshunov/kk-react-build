@@ -28,7 +28,8 @@ module.exports = {
         extensions: [
             '.ts',
             '.tsx',
-            '.js'
+            '.js',
+            '.jsx'
         ]
     },
     module: {
@@ -41,11 +42,23 @@ module.exports = {
                     /\.png$/,
                     /\.svg$/
                 ],
-                loader: 'url-loader',
+                loader: 'file-loader',
                 options: {
-                    limit: 10000,
-                    name: 'static/media/[name].[hash:5].[ext]',
+                    outputPath: 'static/media',
+                    name: '[name].[hash:5].[ext]'
                 },
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf)(\?.*$|$)/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'static/fonts',
+                            name: '[name].[hash:5].[ext]'
+                        }
+                    }
+                ]
             },
             {
                 test: /\.js$/,
@@ -144,6 +157,22 @@ module.exports = {
             /ru/
         )
     ],
+
+    performance: {
+        hints: false,
+    },
+
+    stats: {
+        // chunks: false,
+        // chunkGroups: false,
+        // chunkModules: false,
+        // chunkOrigins: false,
+        entrypoints: false,
+        // depth: false,
+        // maxModules: 0,
+        modules: false,
+        // performance: false
+    },
 
     optimization: {
         runtimeChunk: {
