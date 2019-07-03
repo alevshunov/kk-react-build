@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
+const OfflinePlugin = require('offline-plugin');
 
 const path = require('path');
 const rootDir = path.resolve(process.env.PWD);
@@ -27,7 +28,8 @@ module.exports = env => {
                 {
                     filename: '[name].' + versionName + '.[hash:5].bundle.css'
                 }
-            )
-        ],
+            ),
+            new OfflinePlugin()
+        ]
     });
 };

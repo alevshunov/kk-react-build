@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
+const OfflinePlugin = require('offline-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -32,5 +33,6 @@ module.exports = merge(common, {
                 filename: '[name].bundle.css'
             }
         ),
-    ],
+        new OfflinePlugin()
+    ]
 });
