@@ -29,7 +29,9 @@ module.exports = env => {
                     filename: '[name].' + versionName + '.[hash:5].bundle.css'
                 }
             ),
-            new OfflinePlugin()
+            new OfflinePlugin({
+                responseStrategy: 'network-first'
+            })
         ]
     });
 };

@@ -33,6 +33,8 @@ module.exports = merge(common, {
                 filename: '[name].bundle.css'
             }
         ),
-        new OfflinePlugin()
+        new OfflinePlugin({
+            responseStrategy: 'network-first'
+        })
     ]
 });
